@@ -70,5 +70,3 @@ The application follows a **layered architecture** with clear separation of conc
 - Two tables with foreign key relationship (1:Many)
 
 ---
-
-## 📂 Project Structure
