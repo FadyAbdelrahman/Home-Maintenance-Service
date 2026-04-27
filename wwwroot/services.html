@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Home Maintenance</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Top navigation bar -->
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">HomeFix</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html" class="active">Services</a></li>
+                <li><a href="my-requests.html">My Requests</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page title section -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Services</h1>
+            <p>Professional home maintenance services at your fingertips</p>
+        </div>
+    </section>
+
+    <!-- Main services section -->
+    <section class="services-section">
+        <div class="container">
+            <!-- Filter buttons to sort services by category -->
+            <div class="filter-bar">
+                <button class="filter-btn active" data-category="all">All Services</button>
+                <button class="filter-btn" data-category="Electrical">Electrical</button>
+                <button class="filter-btn" data-category="Plumbing">Plumbing</button>
+                <button class="filter-btn" data-category="HVAC">HVAC</button>
+                <button class="filter-btn" data-category="Carpentry">Carpentry</button>
+                <button class="filter-btn" data-category="Painting">Painting</button>
+                <button class="filter-btn" data-category="Appliance">Appliance</button>
+            </div>
+
+            <!-- Container for displaying services filled by JavaScript -->
+            <div class="service-grid" id="servicesList"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 HomeFix. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Modal popup for requesting a service -->
+    <div class="modal" id="requestModal">
+        <div class="modal-content">
+            <!-- Close button -->
+            <span class="close">&times;</span>
+            <h2>Request Service</h2>
+            <!-- Service request form -->
+            <form id="requestForm">
+                <!-- Hidden field to store the service ID -->
+                <input type="hidden" id="serviceId">
+                
+                <!-- Service name field (read-only) -->
+                <div class="form-group">
+                    <label for="serviceName">Service</label>
+                    <input type="text" id="serviceName" disabled>
+                </div>
+                
+                <!-- Customer name input -->
+                <div class="form-group">
+                    <label for="customerName">Your Name</label>
+                    <input type="text" id="customerName" required>
+                </div>
+                
+                <!-- Email input -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                
+                <!-- Phone number input -->
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                
+                <!-- Address input -->
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" required>
+                </div>
+                
+                <!-- Preferred date and time input -->
+                <div class="form-group">
+                    <label for="preferredDate">Preferred Date</label>
+                    <input type="datetime-local" id="preferredDate" required>
+                </div>
+                
+                <!-- Submit button -->
+                <button type="submit" class="btn">Submit Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript file -->
+    <script src="js/app.js"></script>
+    <script>
+        // Load all services from API
+        loadAllServices();
+        // Setup filter button functionality
+        setupFilters();
+        // Setup modal popup functionality
+        setupModal();
+    </script>
+</body>

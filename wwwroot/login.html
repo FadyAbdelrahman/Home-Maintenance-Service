@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Home Maintenance</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">HomeFix</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="my-requests.html">My Requests</a></li>
+                <li><a href="login.html" class="active">Login</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Login</h1>
+            <p>Sign in to manage your service requests</p>
+        </div>
+    </section>
+
+    <!-- Login form section -->
+    <section class="login-section">
+        <div class="container">
+            <form class="login-form" id="loginForm">
+                <!-- Username input field -->
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" required>
+                </div>
+                
+                <!-- Password input field -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" required>
+                </div>
+                
+                <!-- Login button -->
+                <button type="submit" class="btn">Login</button>
+                
+                <!-- Demo credentials note -->
+                <p class="demo-note">Demo: username = Fady.pro, password = Fady2026</p>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 HomeFix. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript files -->
+    <script src="js/app.js"></script>
+    <script>
+        // Handle login form submission
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            // Prevent page reload on form submit
+            e.preventDefault();
+            
+            // Get username and password from input fields
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            // Check if credentials are correct
+            if (username === 'Fady.pro' && password === 'Fady2026') {
+                alert('Login successful!');
+                // Save login status in browser storage
+                localStorage.setItem('isLoggedIn', 'true');
+                // Redirect to My Requests page
+                window.location.href = 'my-requests.html';
+            } else {
+                // Show error message for wrong credentials
+                alert('Invalid credentials. Try Fady.pro / Fady202');
+            }
+        });
+    </script>
+</body>
+</html>

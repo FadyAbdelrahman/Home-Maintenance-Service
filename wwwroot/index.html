@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Home Maintenance</title>
+    <!-- Link to external CSS file for styling -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation bar at the top of the page -->
+    <nav class="navbar">
+        <div class="container">
+            <!-- Logo/Brand name -->
+            <h1 class="logo">HomeFix</h1>
+            <!-- Navigation links to different pages -->
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="my-requests.html">My Requests</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main welcome area -->
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to HomeFix</h1>
+            <p>Your trusted partner for home maintenance services</p>
+            <!-- Button to navigate to services page -->
+            <a href="services.html" class="btn">Browse Services</a>
+        </div>
+    </section>
+
+    <!-- Features section - shows why customers should choose us -->
+    <section class="features">
+        <div class="container">
+            <h2>Why Choose Us</h2>
+            <div class="feature-grid">
+                <!-- Feature card 1 -->
+                <div class="feature-card">
+                    <h3>Professional Service</h3>
+                    <p>Experienced technicians for all your home maintenance needs</p>
+                </div>
+                <!-- Feature card 2 -->
+                <div class="feature-card">
+                    <h3>Quick Response</h3>
+                    <p>Fast and reliable service at your convenience</p>
+                </div>
+                <!-- Feature card 3 -->
+                <div class="feature-card">
+                    <h3>Affordable Pricing</h3>
+                    <p>Competitive rates with no hidden charges</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured services section - will be populated by JavaScript -->
+    <section class="featured-services">
+        <div class="container">
+            <h2>Featured Services</h2>
+            <!-- This div will be filled with services from the API -->
+            <div class="service-grid" id="featuredServices"></div>
+        </div>
+    </section>
+
+    <!-- Footer section -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 HomeFix. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Link to JavaScript file -->
+    <script src="js/app.js"></script>
+    <script>
+        // Load and display the featured services when page loads
+        loadFeaturedServices();
+    </script>
+</body>
+</html>

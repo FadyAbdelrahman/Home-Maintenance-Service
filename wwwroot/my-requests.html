@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Requests - Home Maintenance</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation bar -->
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">HomeFix</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="my-requests.html" class="active">My Requests</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>My Requests</h1>
+            <p>Track and manage your service requests</p>
+        </div>
+    </section>
+
+    <!-- Main section for viewing requests -->
+    <section class="my-requests-section">
+        <div class="container">
+            <!-- Email search box to find customer requests -->
+            <div class="email-search">
+                <input type="email" id="searchEmail" placeholder="Enter your email" required>
+                <button class="btn" onclick="loadMyRequests()">Search</button>
+            </div>
+
+            <!-- Container for displaying the list of requests -->
+            <div class="requests-list" id="requestsList"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 HomeFix. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Rating modal - appears when user wants to rate a completed service -->
+    <div class="modal" id="ratingModal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Rate Service</h2>
+            <form id="ratingForm">
+                <!-- Hidden field to store the request ID -->
+                <input type="hidden" id="ratingRequestId">
+                
+                <!-- Star rating section -->
+                <div class="form-group">
+                    <label>Rating</label>
+                    <div class="star-rating">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
+                </div>
+                
+                <!-- Optional comments field -->
+                <div class="form-group">
+                    <label for="comments">Comments (optional)</label>
+                    <textarea id="comments"></textarea>
+                </div>
+                
+                <!-- Submit button -->
+                <button type="submit" class="btn">Submit Rating</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript files -->
+    <script src="js/app.js"></script>
+    <script>
+        // Initialize the rating modal functionality
+        setupRatingModal();
+    </script>
+</body>
+</html>
